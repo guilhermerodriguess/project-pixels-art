@@ -1,5 +1,14 @@
+body {
+    text-align: center;
+}
+
+
 h1 {
     text-align: center;
+}
+
+hr {
+    margin: 10px;
 }
 
 #color-palette {
@@ -8,6 +17,14 @@ h1 {
 
 #pixel-board {
     text-align: center;
+}
+
+#clear-board {
+    margin: 10px;
+}
+
+#generate-board {
+    margin: 10px;
 }
 
 .column {

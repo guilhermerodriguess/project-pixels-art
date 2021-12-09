@@ -24,7 +24,7 @@ function pixelBoard (width, height) {
         }
     }
 }
-pixelBoard(5,5)
+pixelBoard(lengthBoard(),lengthBoard())
 
 // Seleciona a cor preta assim que a página é acessada.
 
@@ -50,3 +50,76 @@ function selectedColor() {
     }
 }
 selectedColor()
+
+// Pinta os pixels com a cor selecionada
+
+function paintPixel() {
+    let acessPixel = document.querySelectorAll('.pixel')
+
+    for (i = 0; i < acessPixel.length; i++) {
+        acessPixel[i].addEventListener('click', recebeClick)
+    }
+    function recebeClick(origem) {
+        origem.target.style.backgroundColor = document.querySelector('.selected').classList[1]
+    }
+}
+paintPixel()
+
+// Faz o botão 'limpar' pintar todos os pixels de branco.
+
+function clearBoard() {
+    let acessButon = document.querySelector('#clear-board')
+    let acessPixel = document.querySelectorAll('.pixel')
+
+    acessButon.addEventListener('click', recebeClick)
+
+    function recebeClick() {
+        for (i = 0; i < acessPixel.length; i++) {
+            acessPixel[i].style.backgroundColor = 'white'
+        }
+    }
+}
+clearBoard()
+
+// Faz o tamanho do Quadro de pixels, ser definido pelo usuário.
+
+function lengthBoard() {
+    let acessInput = document.querySelector('#board-size')
+    if (acessInput.value < 5 || acessInput.value > 50) {
+        if (acessInput.value < 5)
+        return '5'
+        else {
+            return '50'
+        }
+    }
+    else {
+        return acessInput.value
+    }
+}
+
+function GenetareButton() {
+    let acessButton = document.querySelector('#generate-board')
+    let acessInput = document.querySelector('#board-size')
+
+    acessButton.addEventListener('click', recebeClick)
+
+    function recebeClick() {
+        if (acessInput.value === '') {
+            return window.alert('Board inválido!')
+        }
+        else {
+        let pixel = document.querySelectorAll('.pixel')
+        let column = document.querySelectorAll('.column')
+        for (i = 0; i < column.length; i++) {
+            column[i].remove()
+        }
+        for (i = 0; i < pixel.length; i++) {
+            pixel[i].remove()
+        }
+        pixelBoard(lengthBoard(),lengthBoard())
+        paintPixel()
+        clearBoard()
+        }
+    }
+}
+GenetareButton()

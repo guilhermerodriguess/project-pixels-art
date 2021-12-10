@@ -60,7 +60,7 @@ function paintPixel() {
         acessPixel[i].addEventListener('click', recebeClick)
     }
     function recebeClick(origem) {
-        origem.target.style.backgroundColor = document.querySelector('.selected').classList[1]
+        origem.target.style.backgroundColor = document.querySelector('.selected').classList[2]
     }
 }
 paintPixel()
@@ -123,3 +123,18 @@ function GenetareButton() {
     }
 }
 GenetareButton()
+
+function setColor() {
+    let bg1 = document.querySelector('.red')
+    let bg2 = document.querySelector('.blue')
+    let bg3 = document.querySelector('.green')
+
+    bg1.classList.add('#'+Math.random().toString(16).substr(-6))
+    bg2.classList.add('#'+Math.random().toString(16).substr(-6))
+    bg3.classList.add('#'+Math.random().toString(16).substr(-6))
+
+    bg1.style.backgroundColor = bg1.classList[2]
+    bg2.style.backgroundColor = bg2.classList[2]
+    bg3.style.backgroundColor = bg3.classList[2]
+}
+setColor()

@@ -1,4 +1,4 @@
-# pixel art
+# Pixels Art
 
 The Pixels Art project is a website that allows users to create pixel drawings in a fun and interactive way. The application was developed with the aim of providing an engaging and creative experience, in addition to stimulating the artistic expression of users.
 
@@ -19,13 +19,13 @@ To start using the Pixels Art project, follow the steps below:
 1. Clone the repository using the following command in your terminal:
 
    ```
-   git clone git@github.com:your-user/pixels-art.git
+   git clone git@github.com:guilhermerodriguess/project-pixels-art.git
    ```
 
 2. Access the project directory:
 
    ```
-   cd pixels-art
+   cd project-pixels-art
    ```
 
 3. Open the `index.html` file in your preferred browser.
